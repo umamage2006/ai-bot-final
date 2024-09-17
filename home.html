@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Wealth Optimizer - Home</title>
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f4f1de 0%, #a8dadc 50%, #457b9d 100%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #264653; /* Deeper pastel teal */
+            font-family: 'Georgia', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: textFadeIn 1.5s ease-in-out forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #6d6875; /* Muted pastel purple */
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            opacity: 0;
+            animation: textFadeIn 2s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .btn-primary {
+            background-color: #e63946; /* Soft pastel coral */
+            border-color: #e63946;
+            font-size: 1.3rem;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: transform 0.4s, background-color 0.3s;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            background-color: #d62828; /* Darker coral */
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s;
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .btn-primary:hover::before {
+            width: 150%;
+            height: 150%;
+            opacity: 1;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95); /* White card with slight transparency */
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            width: 90%;
+            margin: 0 auto;
+            transform: translateY(30px);
+            animation: cardSlideIn 1.5s ease forwards;
+            opacity: 0;
+        }
+
+        /* Keyframes for text fade-in animation */
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Keyframes for card slide-in animation */
+        @keyframes cardSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Background floating bubbles effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+            filter: blur(100px);
+            z-index: -2;
+            animation: floatUp 15s infinite;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            right: 50%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+            filter: blur(120px);
+            z-index: -2;
+            animation: floatUpReverse 18s infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes floatUpReverse {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .btn-primary {
+                font-size: 1.1rem;
+                padding: 10px 24px;
+            }
+
+            .container {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+<center>
+    <div class="container text-center mt-5">
+        <h1>Welcome to the Health Wealth Optimizer</h1>
+        <p>Optimize your health and wealth in a few simple steps!</p>
+        <a href="/input" class="btn btn-primary btn-lg mt-3">Start Health Wealth Optimizer</a>
+    </div>
+</center>
+</body>
+</html>

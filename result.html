@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Recommendations</title>
+</head>
+<style>
+    /* Global Styling */
+body {
+    background:  linear-gradient(135deg, #f4f1de 0%, #a8dadc 50%, #457b9d 100%);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #333;
+    text-align: center;
+}
+
+/* Result Box Styling */
+.result-box {
+    background-color: rgba(255, 255, 255, 0.95); /* Light, transparent white */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 400px;
+    text-align: left;
+    animation: boxFadeIn 1.2s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Heading and Paragraph Styling */
+h2 {
+    color: #264653; /* Consistent deep pastel teal */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Highlighted Data Styling */
+strong {
+    color: #457b9d; /* Soft pastel blue to highlight key data */
+}
+
+/* Button and Link Styling */
+a {
+    display: inline-block;
+    background-color: #e63946; /* Coral for consistency */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    background-color: #d62828; /* Darker coral on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Hover shadow effect */
+}
+
+/* Fade-in Animation for Result Box */
+@keyframes boxFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .result-box {
+        width: 90%;
+        padding: 40px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    a {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}
+
+</style>
+<body>
+<center>
+    {% if recommendations %}
+        <div class="result-box">
+            <h2>Recommendations:</h2>
+            <p><strong>Health Plan:</strong> {{ recommendations['health_plan'] }}</p>
+            <p><strong>Investment Plan:</strong> {{ recommendations['investment_plan'] }}</p>
+            <p><strong>Predicted Future Health Expenses:</strong> {{ recommendations['predicted_health_expenses'] | round(2) }}</p>
+            <p><strong>Future Investment Value:</strong> {{ recommendations['future_investment'] | round(2) }}</p>
+        </div>
+    {% endif %}
+    <a href="/input">Go back to form</a>
+</center>
+</body>
+</html>

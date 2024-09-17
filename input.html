@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Wealth Optimizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<style>
+   /* Global Styling */
+body {
+    background:  linear-gradient(135deg, #f4f1de 0%, #a8dadc 50%, #457b9d 100%);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #333;
+}
+
+h1 {
+    color: #264653; /* Matching deep pastel teal from the homepage */
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+/* Form Container Styling */
+form {
+    background-color: rgba(255, 255, 255, 0.95); /* Light, transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    width: 400px; /* Aligns with the homepage's clean design */
+    text-align: center;
+    animation: formSlideIn 1.2s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Label and Input Fields */
+label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #457b9d; /* Soft pastel blue on focus */
+    box-shadow: 0 0 5px rgba(69, 123, 157, 0.5); /* Subtle blue shadow on focus */
+}
+
+/* Button Styling */
+button {
+    background-color: #e63946; /* Soft pastel coral */
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #d62828; /* Darker coral for hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+a {
+    display: inline-block;
+    background-color: #e63946; /* Coral for consistency */
+    color: white;
+    padding: 12px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    background-color: #d62828; /* Darker coral on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Hover shadow effect */
+}
+
+/* Form Slide-in Animation */
+@keyframes formSlideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 730px) {
+    form {
+        width: 85%;
+        padding: 35px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+</style>
+<body>
+ <center>
+    <h1>Health Wealth Optimizer</h1>
+    <form action="/result" method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+        
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income" required><br>
+        
+        <label for="health_expenses">Current Health Expenses:</label>
+        <input type="number" id="health_expenses" name="health_expenses" required><br>
+        
+        <label for="savings_goal">Savings Goal:</label>
+        <input type="number" id="savings_goal" name="savings_goal" required><br>
+        
+        <label for="current_investment">Current Investment:</label>
+        <input type="number" id="current_investment" name="current_investment" required><br>
+        
+        <button type="GET RECOMMENDATIONS">Get Recommendations</button>
+    </form>
+    
+    <a href="/">Go back to homepage</a>
+ </center>
+</body>
+</html>
