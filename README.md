@@ -1,0 +1,1 @@
+this project is a small health care chatbot website which primarily gets inputs from user and gives suggestions whether to increase the insurance plan or continue the existing one using linear regression model using python.
